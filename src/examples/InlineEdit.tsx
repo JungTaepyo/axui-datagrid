@@ -26,6 +26,7 @@ class InlineEdit extends React.Component<any, any> {
           key: 'money',
           label: 'Money',
           formatter: 'money',
+          align: 'right',
           editor: { type: 'text' },
         },
       ],
@@ -84,13 +85,13 @@ class InlineEdit extends React.Component<any, any> {
             type="primary"
             onClick={() => this.changeConfig('setHeight', 400)}
           >
-            height : 400"
+            height : 400
           </Button>
           <Button
             type="primary"
             onClick={() => this.changeConfig('setHeight', 500)}
           >
-            height : 500"
+            height : 500
           </Button>
 
 

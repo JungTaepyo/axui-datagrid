@@ -16,7 +16,7 @@ class EventReceive extends React.Component<any, any> {
         { key: 'title', width: 200, label: 'Title' },
         { key: 'writer', label: 'Writer' },
         { key: 'date', label: 'Date', formatter: 'date' },
-        { key: 'money', label: 'Money', formatter: 'money' },
+        { key: 'money', label: 'Money', formatter: 'money', align: 'right' },
       ],
       data: gridData,
       options: {
@@ -66,12 +66,19 @@ class EventReceive extends React.Component<any, any> {
             columns={this.state.columns}
             data={this.state.data}
             options={this.state.options}
-            onBeforeEvent={(e, eventName) => {
-              if (eventName === 'contextmenu') {
-                e.preventDefault();
-                // e.stopPropagation();
-              }
+            onBeforeEvent={({ e, eventName }) => {
               this.receiveEvent(eventName);
+            }}
+            onRightClick={({ e, item, value, focusedRow, focusedCol }) => {
+              e.preventDefault();
+              // e.stopPropagation();
+              // item : item of list, value: keyvalue of item
+              console.log(item, value, focusedRow, focusedCol);
+            }}
+            selection={{
+              onChange: selection => {
+                console.log(selection);
+              },
             }}
           />
           <Divider />
@@ -92,13 +99,13 @@ class EventReceive extends React.Component<any, any> {
             type="primary"
             onClick={() => this.changeConfig('setHeight', 400)}
           >
-            height : 400"
+            height : 400
           </Button>
           <Button
             type="primary"
             onClick={() => this.changeConfig('setHeight', 500)}
           >
-            height : 500"
+            height : 500
           </Button>
         </Segment>
       </Wrapper>

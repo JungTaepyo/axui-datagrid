@@ -15,6 +15,9 @@ const feature08 = require('assets/datagrid-feature-08.png');
 const feature091 = require('assets/datagrid-feature-09-1.png');
 const feature092 = require('assets/datagrid-feature-09-2.png');
 const feature10 = require('assets/datagrid-feature-10.png');
+const feature111 = require('assets/datagrid-feature-11-1.png');
+const feature112 = require('assets/datagrid-feature-11-2.png');
+const feature113 = require('assets/datagrid-feature-11-3.png');
 
 interface IProps {}
 interface IState {}
@@ -36,12 +39,13 @@ class Introduction extends React.Component<IProps, IState> {
             web application development. And I made it using 'React + ES6 + TS'.
           </p>
           <p>
-            'datagrid UI component' is a UI that shows data as a spreadsheet It
-            says. There are so many features that axui-datagrid needs to be a
-            complete `datagrid UI component`. However, the function of
+            'datagrid UI component' is a UI that shows data as a spreadsheet.
+            The 'axui-datagrid' component requires a lot of functionality to
+            become a complete 'datagrid' component. However, the function of
             outputting and controlling a large amount of data at a high speed is
-            more important than the function having all functions. We've also
-            optimized it for developers using 'React + ES6 + TS'.
+            more important than the function having all functions. So
+            `axui-datagrid` focuses on high-speed control. We've also optimized
+            it for developers using 'React + ES6 + TS'.
           </p>
         </Segment>
 
@@ -55,7 +59,7 @@ class Introduction extends React.Component<IProps, IState> {
             HTML nodes in your browser The browser will slow down and
             inconvenience you. Because axui-datagrid only prints the areas that
             need to be displayed in the grid container area, it can process
-            large amounts of data quickly.{' '}
+            large amounts of data quickly with ease.{' '}
           </p>
           <NavLink to={'examples/LargeData'}>
             <Button type={'primary'} size={'small'} ghost>
@@ -69,9 +73,11 @@ class Introduction extends React.Component<IProps, IState> {
           {/* Formatting of data  */}
           <h3>Formatting of data</h3>
           <p>
-            You can use 'date', 'money' predefined in 'columns> col.formatter',
-            or you can change the values as desired using a user-defined
-            function.{' '}
+            Users can change the values using 'date', 'money' predefined in 'columns>col.formatter',
+            or the values as desired using a user-defined function and apply the formula to the data in the column.
+            The results are then displayed accoding to the function. 
+            For example, if you defined the formatter of the 'money' column as a function(args: any) &#123; return args.value*2 &#125;,
+            you can see the money columns update doubled.{' '}
           </p>
           <NavLink to={'examples/Formatter'}>
             <Button type={'primary'} size={'small'} ghost>
@@ -213,6 +219,22 @@ class Introduction extends React.Component<IProps, IState> {
             <br />
             <img src={feature07} width={'100%'} style={{ maxWidth: 800 }} />
           </NavLink>
+
+          <Divider />
+
+          <h3>Align Header</h3>
+          <p>This example changes the 'options.header.align' property.</p>
+          <NavLink to={'examples/AlignHeader'}>
+            <Button type={'primary'} size={'small'} ghost>
+              View Examples
+            </Button>
+            <br />
+            <img src={feature111} width={'100%'} style={{ maxWidth: 800 }} />
+            <img src={feature112} width={'100%'} style={{ maxWidth: 800 }} />
+            <img src={feature113} width={'100%'} style={{ maxWidth: 800 }} />
+          </NavLink>
+
+          <Divider />
         </Segment>
       </Wrapper>
     );

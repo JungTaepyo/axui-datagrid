@@ -16,7 +16,7 @@ class LoadingState extends React.Component<any, any> {
         { key: 'title', width: 200, label: 'Title' },
         { key: 'writer', label: 'Writer' },
         { key: 'date', label: 'Date', formatter: 'date' },
-        { key: 'money', label: 'Money', formatter: 'money' },
+        { key: 'money', label: 'Money', formatter: 'money', align: 'right' },
       ],
       data: [...gridData],
       filteredList: [...gridData],
@@ -89,13 +89,13 @@ class LoadingState extends React.Component<any, any> {
             type="primary"
             onClick={() => this.changeConfig('setHeight', 400)}
           >
-            height : 400"
+            height : 400
           </Button>
           <Button
             type="primary"
             onClick={() => this.changeConfig('setHeight', 500)}
           >
-            height : 500"
+            height : 500
           </Button>
 
 
